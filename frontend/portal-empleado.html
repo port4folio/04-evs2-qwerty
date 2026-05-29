@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Empleado ERP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    ERP Seguridad LTDA
+</header>
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <h2>ERP</h2>
+
+        <ul>
+            <li><a href="empleados.html">Empleados</a></li>
+            <li><a href="inventario.html">Inventario</a></li>
+            <li><a href="portal-empleado.html">Portal Empleado</a></li>
+            <li><a href="login.html">Cerrar Sesión</a></li>
+        </ul>
+
+    </div>
+
+    <div class="content">
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <h3>Asistencia</h3>
+                <p>96%</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Liquidaciones</h3>
+                <p>12</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Solicitudes</h3>
+                <p>4</p>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Liquidaciones Disponibles</h2>
+
+            <table class="table">
+
+                <tr>
+                    <th>Mes</th>
+                    <th>Estado</th>
+                    <th>Acción</th>
+                </tr>
+
+                <tr>
+                    <td>Mayo 2026</td>
+                    <td>Disponible</td>
+                    <td>
+                        <button onclick="descargarLiquidacion()">
+                            Descargar
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Abril 2026</td>
+                    <td>Disponible</td>
+                    <td>
+                        <button onclick="descargarLiquidacion()">
+                            Descargar
+                        </button>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Asistencia Personal</h2>
+
+            <table class="table">
+
+                <tr>
+                    <th>Día</th>
+                    <th>Ingreso</th>
+                    <th>Salida</th>
+                </tr>
+
+                <tr>
+                    <td>Lunes</td>
+                    <td>08:00</td>
+                    <td>18:00</td>
+                </tr>
+
+                <tr>
+                    <td>Martes</td>
+                    <td>08:05</td>
+                    <td>18:00</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Solicitar Anticipo</h2>
+
+            <form onsubmit="solicitarAnticipo(event)">
+
+                <input type="number"
+                       id="monto"
+                       placeholder="Monto solicitado">
+
+                <button type="submit">
+                    Solicitar Anticipo
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Certificados</h2>
+
+            <button onclick="imprimirCertificado()">
+                Imprimir Certificado Laboral
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function descargarLiquidacion(){
+
+    alert("Liquidación descargada correctamente");
+}
+
+function solicitarAnticipo(event){
+
+    event.preventDefault();
+
+    const monto = document.getElementById("monto").value;
+
+    if(monto === ""){
+
+        alert("Ingrese un monto");
+
+        return;
+    }
+
+    alert("Solicitud enviada correctamente");
+
+    document.getElementById("monto").value = "";
+}
+
+function imprimirCertificado(){
+
+    window.print();
+}
+
+</script>
+
+</body>
+</html>

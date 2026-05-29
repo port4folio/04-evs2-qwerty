@@ -1,26 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventario ERP</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h1>Módulo Inventario</h1>
+<header>
+    ERP Seguridad LTDA
+</header>
 
-<form>
-    <input type="text" placeholder="Nombre producto">
-    <input type="number" placeholder="Stock">
-    <input type="text" placeholder="Bodega">
+<div class="container">
 
-    <button type="submit">Registrar Producto</button>
-</form>
+    <div class="sidebar">
 
-<h2>Productos registrados</h2>
+        <h2>ERP</h2>
 
-<ul>
-    <li>Notebook Dell - Stock: 12</li>
-    <li>Monitor Samsung - Stock: 7</li>
-</ul>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Empleados</a></li>
+            <li><a href="#">Inventario</a></li>
+            <li><a href="#">Reportes</a></li>
+        </ul>
+
+    </div>
+
+    <div class="content">
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <h3>Productos</h3>
+                <p>56</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Stock Bajo</h3>
+                <p>4</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Bodegas</h3>
+                <p>3</p>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Registrar Producto</h2>
+
+            <form>
+
+                <input type="text" placeholder="Nombre producto">
+
+                <input type="number" placeholder="Stock disponible">
+
+                <input type="text" placeholder="Bodega">
+
+                <button type="submit">Registrar Producto</button>
+
+            </form>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Inventario Disponible</h2>
+
+            <table class="table">
+
+                <tr>
+                    <th>Producto</th>
+                    <th>Stock</th>
+                    <th>Bodega</th>
+                </tr>
+
+                <tr>
+                    <td>Notebook Dell</td>
+                    <td>12</td>
+                    <td>Santiago</td>
+                </tr>
+
+                <tr>
+                    <td>Monitor Samsung</td>
+                    <td>7</td>
+                    <td>Concepción</td>
+                </tr>
+
+                <tr>
+                    <td>Mouse Logitech</td>
+                    <td>25</td>
+                    <td>Los Ángeles</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>

@@ -1,26 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empleados ERP</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h1>Módulo de Empleados</h1>
+<header>
+    ERP Seguridad LTDA
+</header>
 
-<form>
-    <input type="text" placeholder="Nombre empleado">
-    <input type="text" placeholder="Cargo">
-    <input type="email" placeholder="Correo">
+<div class="container">
 
-    <button type="submit">Registrar</button>
-</form>
+    <div class="sidebar">
 
-<h2>Listado de empleados</h2>
+        <h2>ERP</h2>
 
-<ul>
-    <li>Juan Pérez - Supervisor</li>
-    <li>María Soto - Administradora</li>
-</ul>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Empleados</a></li>
+            <li><a href="#">Inventario</a></li>
+            <li><a href="#">Reportes</a></li>
+        </ul>
+
+    </div>
+
+    <div class="content">
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <h3>Empleados</h3>
+                <p>24</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Asistencia</h3>
+                <p>92%</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Vacaciones</h3>
+                <p>5</p>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Registrar Empleado</h2>
+
+            <form>
+
+                <input type="text" placeholder="Nombre empleado">
+
+                <input type="text" placeholder="Cargo">
+
+                <input type="email" placeholder="Correo electrónico">
+
+                <button type="submit">Registrar</button>
+
+            </form>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Listado de Empleados</h2>
+
+            <table class="table">
+
+                <tr>
+                    <th>Nombre</th>
+                    <th>Cargo</th>
+                    <th>Correo</th>
+                </tr>
+
+                <tr>
+                    <td>Juan Pérez</td>
+                    <td>Supervisor</td>
+                    <td>juan@empresa.cl</td>
+                </tr>
+
+                <tr>
+                    <td>María Soto</td>
+                    <td>Administradora</td>
+                    <td>maria@empresa.cl</td>
+                </tr>
+
+                <tr>
+                    <td>Carlos Rojas</td>
+                    <td>Guardia</td>
+                    <td>carlos@empresa.cl</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>

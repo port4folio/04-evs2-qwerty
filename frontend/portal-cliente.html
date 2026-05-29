@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Cliente ERP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    ERP Seguridad LTDA
+</header>
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <h2>ERP</h2>
+
+        <ul>
+            <li><a href="portal-cliente.html">Portal Cliente</a></li>
+            <li><a href="login.html">Cerrar Sesión</a></li>
+        </ul>
+
+    </div>
+
+    <div class="content">
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <h3>Productos</h3>
+                <p>56</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Pedidos</h3>
+                <p>14</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Clientes</h3>
+                <p>22</p>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Buscar Productos</h2>
+
+            <input type="text"
+                   id="busqueda"
+                   placeholder="Buscar producto..."
+                   onkeyup="buscarProducto()">
+
+        </div>
+
+        <div class="card">
+
+            <h2>Catálogo de Productos</h2>
+
+            <table class="table" id="tabla-catalogo">
+
+                <tr>
+                    <th>Producto</th>
+                    <th>Stock</th>
+                    <th>Precio</th>
+                    <th>Acción</th>
+                </tr>
+
+                <tr>
+                    <td>Notebook Dell</td>
+                    <td>12</td>
+                    <td>$850.000</td>
+                    <td>
+                        <button onclick="realizarPedido()">
+                            Solicitar
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Monitor Samsung</td>
+                    <td>3</td>
+                    <td>$210.000</td>
+                    <td>
+                        <button onclick="realizarPedido()">
+                            Solicitar
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Mouse Logitech</td>
+                    <td>25</td>
+                    <td>$35.000</td>
+                    <td>
+                        <button onclick="realizarPedido()">
+                            Solicitar
+                        </button>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function realizarPedido(){
+
+    alert("Pedido realizado correctamente");
+}
+
+function buscarProducto(){
+
+    const input = document.getElementById("busqueda");
+
+    const filtro = input.value.toLowerCase();
+
+    const tabla = document.getElementById("tabla-catalogo");
+
+    const filas = tabla.getElementsByTagName("tr");
+
+    for(let i = 1; i < filas.length; i++){
+
+        let producto = filas[i].getElementsByTagName("td")[0];
+
+        if(producto){
+
+            let texto = producto.textContent || producto.innerText;
+
+            filas[i].style.display =
+                texto.toLowerCase().includes(filtro)
+                ? ""
+                : "none";
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>

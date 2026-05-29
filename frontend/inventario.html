@@ -6,6 +6,26 @@
     <title>Inventario ERP</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
+<script>
+
+function agregarProducto(event){
+
+    event.preventDefault();
+
+    const tabla = document.getElementById("tabla-productos");
+
+    const fila = tabla.insertRow();
+
+    fila.innerHTML = `
+        <td>Nuevo Producto</td>
+        <td>10</td>
+        <td>Santiago</td>
+    `;
+}
+
+</script>
+
 <body>
 
 <header>
@@ -19,10 +39,9 @@
         <h2>ERP</h2>
 
         <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Empleados</a></li>
-            <li><a href="#">Inventario</a></li>
-            <li><a href="#">Reportes</a></li>
+            <li><a href="empleados.html">Empleados</a></li>
+            <li><a href="inventario.html">Inventario</a></li>
+            <li><a href="login.html">Cerrar Sesión</a></li>
         </ul>
 
     </div>
@@ -52,7 +71,7 @@
 
             <h2>Registrar Producto</h2>
 
-            <form>
+            <form onsubmit="agregarProducto(event)">
 
                 <input type="text" placeholder="Nombre producto">
 
@@ -70,7 +89,7 @@
 
             <h2>Inventario Disponible</h2>
 
-            <table class="table">
+            <table class="table" id="tabla-productos">
 
                 <tr>
                     <th>Producto</th>
